@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         courseNameEdt = findViewById(R.id.idEdtCourseName);
         courseTracksEdt = findViewById(R.id.idEdtCourseTracks);
         courseDurationEdt = findViewById(R.id.idEdtCourseDuration);
-        courseDescriptionEdt = findViewById(R.id.idEdtCourseDescription);
         addCourseBtn = findViewById(R.id.idBtnAddCourse);
         readCourseBtn = findViewById(R.id.idBtnReadCourse);
 
@@ -47,25 +46,27 @@ public class MainActivity extends AppCompatActivity {
                 String courseName = courseNameEdt.getText().toString();
                 String courseTracks = courseTracksEdt.getText().toString();
                 String courseDuration = courseDurationEdt.getText().toString();
-                String courseDescription = courseDescriptionEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (courseName.isEmpty() || courseTracks.isEmpty() || courseDuration.isEmpty() || courseDescription.isEmpty()) {
+                if (courseName.isEmpty() || courseTracks.isEmpty() || courseDuration.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
-                dbHandler.addNewCourse(courseName, courseDuration, courseDescription, courseTracks);
+                dbHandler.addNewCourse(courseName, courseDuration, courseTracks);
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(MainActivity.this, "Course has been added.", Toast.LENGTH_SHORT).show();
+               limparCampos();
+                //branch dev
+            }
+
+            private void limparCampos() {
                 courseNameEdt.setText("");
                 courseDurationEdt.setText("");
                 courseTracksEdt.setText("");
-                //branch dev
-                courseDescriptionEdt.setText("");
             }
         });
 

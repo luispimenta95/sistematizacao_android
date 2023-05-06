@@ -7,7 +7,6 @@ public class CourseModal {
     private String courseName;
     private String courseDuration;
     private String courseTracks;
-    private String courseDescription;
     private int id;
 
     // creating getter and setter methods
@@ -35,16 +34,7 @@ public class CourseModal {
         this.courseTracks = courseTracks;
     }
 
-    public String getCourseDescription()
-    {
-        return courseDescription;
-    }
 
-    public void
-    setCourseDescription(String courseDescription)
-    {
-        this.courseDescription = courseDescription;
-    }
 
     public int getId() { return id; }
 
@@ -53,12 +43,10 @@ public class CourseModal {
     // constructor
     public CourseModal(String courseName,
                        String courseDuration,
-                       String courseTracks,
-                       String courseDescription)
+                       String courseTracks)
     {
         this.courseName = courseName;
         this.courseDuration = courseDuration;
         this.courseTracks = courseTracks;
-        this.courseDescription = courseDescription;
     }
 }

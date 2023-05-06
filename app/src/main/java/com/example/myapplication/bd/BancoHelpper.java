@@ -62,7 +62,7 @@ public class BancoHelpper extends SQLiteOpenHelper {
     }
 
     // this method is use to add new course to our sqlite database.
-    public void addNewCourse(String courseName, String courseDuration, String courseDescription, String courseTracks) {
+    public void addNewCourse(String courseName, String courseDuration, String courseTracks) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -77,7 +77,6 @@ public class BancoHelpper extends SQLiteOpenHelper {
         // along with its key and value pair.
         values.put(NAME_COL, courseName);
         values.put(DURATION_COL, courseDuration);
-        values.put(DESCRIPTION_COL, courseDescription);
         values.put(TRACKS_COL, courseTracks);
 
         // after adding all values we are passing
@@ -106,7 +105,6 @@ public class BancoHelpper extends SQLiteOpenHelper {
             do {
                 // on below line we are adding the data from cursor to our array list.
                 courseModalArrayList.add(new CourseModal(cursorCourses.getString(1),
-                        cursorCourses.getString(4),
                         cursorCourses.getString(2),
                         cursorCourses.getString(3)));
             } while (cursorCourses.moveToNext());

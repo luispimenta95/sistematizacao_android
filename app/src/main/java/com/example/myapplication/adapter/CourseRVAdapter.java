@@ -41,7 +41,6 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
         // to our views of recycler view item.
         CourseModal modal = courseModalArrayList.get(position);
         holder.courseNameTV.setText(modal.getCourseName());
-        holder.courseDescTV.setText(modal.getCourseDescription());
         holder.courseDurationTV.setText(modal.getCourseDuration());
         holder.courseTracksTV.setText(modal.getCourseTracks());
     }
