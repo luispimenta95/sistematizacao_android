@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 courseNameEdt.setText("");
                 courseDurationEdt.setText("");
                 courseTracksEdt.setText("");
+                //branch dev
                 courseDescriptionEdt.setText("");
             }
         });
